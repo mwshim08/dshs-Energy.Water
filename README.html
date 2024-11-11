@@ -181,7 +181,7 @@
         usageResult.innerHTML = '';
         usageFeedback = ['', '', '', '', '', ''];  // 피드백을 초기화
 
-        if (airconTime > 3) {
+        if (airconTime > 5) {
             const msg = '에어컨을 많이 사용합니다. 온도를 조금 높여 에너지 절약을 고려하세요.';
             usageResult.innerHTML += msg + '<br>';
             usageFeedback[0] = msg;
@@ -191,12 +191,12 @@
             usageResult.innerHTML += msg + '<br>';
             usageFeedback[1] = msg;
         }
-        if (laptopTime > 4) {
+        if (laptopTime > 1) {
             const msg = '노트북 충전 시간이 길어요. 배터리 충전 후 충전기를 빼는 것이 좋습니다.';
             usageResult.innerHTML += msg + '<br>';
             usageFeedback[2] = msg;
         }
-        if (phoneTime > 2) {
+        if (phoneTime > 6) {
             const msg = '핸드폰 충전 시간이 길어요. 완충 후 충전기를 빼세요.';
             usageResult.innerHTML += msg + '<br>';
             usageFeedback[3] = msg;
@@ -206,7 +206,7 @@
             usageResult.innerHTML += msg + '<br>';
             usageFeedback[4] = msg;
         }
-        if (hairDryerTime > 10) {
+        if (hairDryerTime > 7) {
             const msg = '헤어드라이어 사용 시간이 길어요. 짧게 사용해 전기를 절약하세요.';
             usageResult.innerHTML += msg + '<br>';
             usageFeedback[5] = msg;
@@ -232,11 +232,11 @@
         tempSuggestion.innerHTML = '';
         temperatureFeedback = '';  // 피드백 초기화
 
-        if (selectedSeason === '여름' && celsiusTemp < 24) {
+        if (selectedSeason === '여름' && celsiusTemp < 23) {
             const msg = '온도가 너무 낮습니다. 에어컨 설정 온도를 높여보세요.';
             tempSuggestion.innerHTML = msg + '<br>';
             temperatureFeedback = msg;
-        } else if (selectedSeason === '겨울' && celsiusTemp > 20) {
+        } else if (selectedSeason === '겨울' && celsiusTemp > 25) {
             const msg = '온도가 너무 높습니다. 히터 설정 온도를 낮춰보세요.';
             tempSuggestion.innerHTML = msg + '<br>';
             temperatureFeedback = msg;
@@ -249,7 +249,7 @@
 
     // 물 사용 분석
     const avgWaterUsage = {
-        shower: 10,
+        shower: 15,
         wash: 15
     };
 
